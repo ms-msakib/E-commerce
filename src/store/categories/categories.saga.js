@@ -8,6 +8,7 @@ import {
 } from './categories.action';
 
 import CATEGORIES_ACTION_TYPES from './categories.types';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export function* fetchCategoriesAsync() {
     try {
@@ -28,3 +29,5 @@ export function* onFetchCategories() {
 export function* categoriesSaga() {
     yield all([call(onFetchCategories)]);
 }
+
+
